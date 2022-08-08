@@ -1,0 +1,10 @@
+.small-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-button-1-0;
+  border-radius: 5px;
+  p {
+    color: black;
+  }
+}

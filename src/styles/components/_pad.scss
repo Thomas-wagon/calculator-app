@@ -1,0 +1,11 @@
+.pad {
+  background-color: $color-pad;
+  height: 300px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 12px;
+  padding: 15px;
+}

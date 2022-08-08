@@ -1,9 +1,14 @@
 import React from "react";
+import Header from "./components/Header";
+import Pad from "./components/Pad";
+import Screen from "./components/Screen";
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello react</h1>
+    <div className="calculator">
+      <Header />
+      <Screen />
+      <Pad />
     </div>
   );
 };
