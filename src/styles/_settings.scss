@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+$font-1: "font-1", sans-serif;
+
+$color-main: #3b4664;
+$color-screen: #181f32;
+$color-pad: #252d44;
+$color-button-1-0: #eae3db;
+$color-button-1-1: #ada7a3;
+$color-button-1-2: white;
+$color-button-2-0: #647299;
+$color-button-2-1: #374462;
+$color-button-2-2: EAE3DB;
+$color-button-3-0: #d13f30;
+$color-button-3-1: #692a2c;
+$color-button-3-2: EAE3DB;
+$white: rgb(243, 243, 243);
+
+@mixin horizontalCenter {
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-main;
+  font-family: $font-1;
+  max-width: 375px;
+  margin: 30px auto;
+  color: $white;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  font-size: 12px;
+}
