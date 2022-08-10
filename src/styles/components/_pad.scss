@@ -9,3 +9,11 @@
   row-gap: 12px;
   padding: 15px;
 }
+
+.button-small {
+  grid-area: small;
+}
+
+.button-large {
+  grid-area: large;
+}
