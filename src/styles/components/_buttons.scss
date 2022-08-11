@@ -6,5 +6,20 @@
   border-radius: 5px;
   p {
     color: black;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  &.delete,
+  &.reset {
+    background-color: $color-button-2-0;
+    p {
+      color: $white;
+    }
+  }
+  &.equal {
+    background-color: $color-button-3-0;
+    p {
+      color: $white;
+    }
   }
 }
