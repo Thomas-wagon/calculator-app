@@ -1,27 +1,29 @@
 import React, { useState } from "react";
+// components
 import Button from "./Button";
-
 const Pad = () => {
+  // variables
   const [buttons, setbuttons] = useState([
-    { id: 1, value: "7" },
-    { id: 2, value: "8" },
-    { id: 3, value: "9" },
-    { id: 4, value: "DEL" },
-    { id: 5, value: "4" },
-    { id: 6, value: "5" },
-    { id: 7, value: "6" },
-    { id: 8, value: "+" },
-    { id: 9, value: "1" },
-    { id: 10, value: "2" },
-    { id: 11, value: "3" },
-    { id: 12, value: "-" },
-    { id: 13, value: "." },
-    { id: 14, value: "0" },
-    { id: 15, value: "/" },
-    { id: 16, value: "x" },
-    { id: 17, value: "RESET" },
-    { id: 18, value: "=" },
+    { id: 1, value: "7", type: "number" },
+    { id: 2, value: "8", type: "number" },
+    { id: 3, value: "9", type: "number" },
+    { id: 4, value: "DEL", type: "delete" },
+    { id: 5, value: "4", type: "number" },
+    { id: 6, value: "5", type: "number" },
+    { id: 7, value: "6", type: "number" },
+    { id: 8, value: "+", type: "plus" },
+    { id: 9, value: "1", type: "number" },
+    { id: 10, value: "2", type: "number" },
+    { id: 11, value: "3", type: "number" },
+    { id: 12, value: "-", type: "minus" },
+    { id: 13, value: ".", type: "dot" },
+    { id: 14, value: "0", type: "number" },
+    { id: 15, value: "/", type: "divide" },
+    { id: 16, value: "x", type: "multiply" },
+    { id: 17, value: "RESET", type: "reset" },
+    { id: 18, value: "=", type: "equal" },
   ]);
+
   return (
     <div className="pad">
       {buttons.map((button) => (
