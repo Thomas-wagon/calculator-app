@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-button-1-0;
+  background-color: $t0-color-button-1-0;
   border-radius: 5px;
   p {
     color: black;
@@ -11,15 +11,50 @@
   }
   &.delete,
   &.reset {
-    background-color: $color-button-2-0;
+    // background-color: $t0-color-button-2-0;
+    // &.t1 {
+    //   background-color: $t1-color-button-2-0;
+    // }
+    // &.t2 {
+    //   background-color: $t2-color-button-2-0;
+    // }
     p {
-      color: $white;
+      color: $t0-white;
     }
   }
   &.equal {
-    background-color: $color-button-3-0;
+    background-color: $t0-color-button-3-0;
+    // &.t1 {
+    //   background-color: $t1-color-button-3-0;
+    // }
+
+    // &.t2 {
+    //   background-color: $t2-color-button-3-0;
+    // }
     p {
-      color: $white;
+      color: $t0-white;
     }
+  }
+}
+
+.t1 .button {
+  &.delete,
+  &.reset {
+    background-color: $t1-color-button-2-0;
+    //   background-color: $t2-color-button-2-0;
+  }
+  &.equal {
+    background-color: $t1-color-button-3-0;
+    //   background-color: $t2-color-button-3-0;
+  }
+}
+
+.t2 .button {
+  &.delete,
+  &.reset {
+    background-color: $t2-color-button-2-0;
+  }
+  &.equal {
+    background-color: $t2-color-button-3-0;
   }
 }
