@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
-import Pad from "./components/Pad";
 import Screen from "./components/Screen";
+import Pad from "./components/Pad";
 
 const App = () => {
   const [theme, setTheme] = useState(0);

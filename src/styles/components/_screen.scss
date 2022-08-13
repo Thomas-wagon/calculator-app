@@ -3,8 +3,19 @@
   flex-direction: row-reverse;
   align-items: center;
   background-color: $t0-color-screen;
+  color: $t0-color-output;
   height: 80px;
   border-radius: 5px;
+}
+
+.t1 .screen {
+  background-color: $t1-color-screen;
+  color: $t1-color-output;
+}
+
+.t2 .screen {
+  background-color: $t2-color-screen;
+  color: $t2-color-output;
 }
 
 h1 {

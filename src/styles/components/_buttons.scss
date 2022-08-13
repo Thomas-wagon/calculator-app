@@ -5,56 +5,61 @@
   background-color: $t0-color-button-1-0;
   border-radius: 5px;
   p {
-    color: black;
+    color: $t0-color-text-button-1;
     font-weight: bold;
     font-size: 24px;
   }
   &.delete,
   &.reset {
-    // background-color: $t0-color-button-2-0;
-    // &.t1 {
-    //   background-color: $t1-color-button-2-0;
-    // }
-    // &.t2 {
-    //   background-color: $t2-color-button-2-0;
-    // }
+    background-color: $t0-color-button-2-0;
     p {
-      color: $t0-white;
+      color: $t0-color-text-button-2;
     }
   }
   &.equal {
     background-color: $t0-color-button-3-0;
-    // &.t1 {
-    //   background-color: $t1-color-button-3-0;
-    // }
-
-    // &.t2 {
-    //   background-color: $t2-color-button-3-0;
-    // }
     p {
-      color: $t0-white;
+      color: $t0-color-text-button-3;
     }
   }
 }
 
 .t1 .button {
+  background-color: $t1-color-button-1-0;
+  p {
+    color: $t1-color-text-button-1;
+  }
   &.delete,
   &.reset {
     background-color: $t1-color-button-2-0;
-    //   background-color: $t2-color-button-2-0;
+    p {
+      color: $t1-color-text-button-2;
+    }
   }
   &.equal {
     background-color: $t1-color-button-3-0;
-    //   background-color: $t2-color-button-3-0;
+    p {
+      color: $t1-color-text-button-3;
+    }
   }
 }
 
 .t2 .button {
+  background-color: $t2-color-button-1-0;
+  p {
+    color: $t2-color-text-button-1;
+  }
   &.delete,
   &.reset {
     background-color: $t2-color-button-2-0;
+    p {
+      color: $t2-color-text-button-2;
+    }
   }
   &.equal {
     background-color: $t2-color-button-3-0;
+    p {
+      color: $t2-color-text-button-3;
+    }
   }
 }
