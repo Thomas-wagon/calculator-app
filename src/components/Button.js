@@ -1,10 +1,17 @@
 import React from "react";
 
-const Button = ({ button }) => {
+const Button = ({ button, displayInputFct }) => {
+  function displayInput(event) {
+    console.log(event.target.value);
+    displayInputFct(event.target.value);
+  }
   return (
-    <div className={`button ${button.type}`}>
-      <p>{button.value}</p>
-    </div>
+    <input
+      type="button"
+      value={button.value}
+      className={`${button.type}`}
+      onClick={displayInput}
+    />
   );
 };
 
