@@ -10,6 +10,14 @@
   padding: 20px;
 }
 
+.t1 .pad {
+  background-color: $t1-color-pad;
+}
+
+.t2 .pad {
+  background-color: $t2-color-pad;
+}
+
 .reset {
   grid-area: 5 / 1 / span 1 / span 2;
 }

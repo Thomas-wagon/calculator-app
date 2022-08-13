@@ -14,28 +14,56 @@ $t0-color-button-1-1: #ada7a3;
 $t0-color-button-1-2: white;
 $t0-color-button-2-0: #647299;
 $t0-color-button-2-1: #374462;
-$t0-color-button-2-2: EAE3DB;
+$t0-color-button-2-2: white;
 $t0-color-button-3-0: #d13f30;
 $t0-color-button-3-1: #692a2c;
-$t0-color-button-3-2: EAE3DB;
-$t0-output: #eeeeee;
-$t0-white: #eeeeee;
+$t0-color-button-3-2: white;
+$t0-color-selector: #d13f30;
+$t0-color-text: #eeeeee;
+$t0-color-text-button-1: #484c55;
+$t0-color-text-button-2: #eef4fa;
+$t0-color-text-button-3: #eef4fa;
+$t0-color-output: #eeeeee;
 
 // theme 2
 $t1-color-main: #e6e6e6;
 $t1-color-screen: #eeeeee;
 $t1-color-pad: #d3cdcd;
-$t1-color-button-2-0: #647299;
+$t1-color-button-1-0: #eae3db;
+$t1-color-button-1-1: #a19d93;
+$t1-color-button-1-2: white;
+$t1-color-button-2-0: #388188;
+$t1-color-button-2-1: #215b61;
+$t1-color-button-2-2: white;
 $t1-color-button-3-0: #c85401;
-$t1-output: #35352d;
+$t1-color-button-3-1: #833a0e;
+$t1-color-button-3-2: white;
+$t1-color-selector: #c85401;
+$t1-color-text: #39392f;
+$t1-color-text-button-1: #39392f;
+$t1-color-text-button-2: #eef4fa;
+$t1-color-text-button-3: #eef4fa;
+$t1-color-output: #39392f;
 
 // theme 3
 $t2-color-main: #17062a;
 $t2-color-screen: #1e0836;
 $t2-color-pad: #1e0836;
-$t2-color-button-2-0: #56077c;
+$t2-color-button-1-0: #321a4c;
+$t2-color-button-1-1: #78218f;
+$t2-color-button-1-2: white;
+$t2-color-button-2-0: #55067b;
+$t2-color-button-2-1: #aa25d9;
+$t2-color-button-2-2: white;
 $t2-color-button-3-0: #00decf;
-$t2-output: #fae358;
+$t2-color-button-3-1: #6ff7f7;
+$t2-color-button-3-2: white;
+$t2-color-selector: #00decf;
+$t2-color-text: #fae358;
+$t2-color-text-button-1: #fae358;
+$t2-color-text-button-2: white;
+$t2-color-text-button-3: black;
+$t2-color-output: #fae358;
 
 * {
   padding: 0;
@@ -48,19 +76,19 @@ body {
   font-family: $font-1;
   max-width: 375px;
   margin: 30px auto;
-  color: $t0-white;
+  color: white;
+}
 
-  &.t1 {
-    background: $t1-color-main;
-  }
-  &.t2 {
-    background: $t2-color-main;
-  }
+.t1 body {
+  background: $t1-color-main;
+}
+
+.t2 body {
+  background: $t2-color-main;
 }
 
 li {
   list-style-type: none;
-  // float: left;
 }
 
 p {
