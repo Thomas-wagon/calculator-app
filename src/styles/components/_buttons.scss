@@ -1,65 +1,74 @@
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+input[type="button"] {
   background-color: $t0-color-button-1-0;
+  border: none;
   border-radius: 5px;
-  p {
-    color: $t0-color-text-button-1;
-    font-weight: bold;
-    font-size: 24px;
+  color: $t0-color-text-button-1;
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $t0-color-button-1-2;
   }
   &.delete,
   &.reset {
     background-color: $t0-color-button-2-0;
-    p {
-      color: $t0-color-text-button-2;
+    color: $t0-color-text-button-2;
+    &:hover {
+      background-color: $t0-color-button-2-2;
     }
   }
   &.equal {
     background-color: $t0-color-button-3-0;
-    p {
-      color: $t0-color-text-button-3;
+    color: $t0-color-text-button-3;
+    &:hover {
+      background-color: $t0-color-button-3-2;
     }
   }
 }
 
-.t1 .button {
+.t1 input[type="button"] {
   background-color: $t1-color-button-1-0;
-  p {
-    color: $t1-color-text-button-1;
+  color: $t1-color-text-button-1;
+  &:hover {
+    background-color: $t1-color-button-1-2;
   }
   &.delete,
   &.reset {
     background-color: $t1-color-button-2-0;
-    p {
-      color: $t1-color-text-button-2;
+    color: $t1-color-text-button-2;
+    &:hover {
+      background-color: $t1-color-button-2-2;
     }
   }
   &.equal {
     background-color: $t1-color-button-3-0;
-    p {
-      color: $t1-color-text-button-3;
+    color: $t1-color-text-button-3;
+    &:hover {
+      background-color: $t1-color-button-3-2;
     }
   }
 }
 
-.t2 .button {
+.t2 input[type="button"] {
   background-color: $t2-color-button-1-0;
-  p {
-    color: $t2-color-text-button-1;
+  color: $t2-color-text-button-1;
+  &:hover {
+    background-color: $t2-color-button-1-2;
   }
   &.delete,
   &.reset {
     background-color: $t2-color-button-2-0;
-    p {
-      color: $t2-color-text-button-2;
+    color: $t2-color-text-button-2;
+    &:hover {
+      background-color: $t2-color-button-2-2;
     }
   }
   &.equal {
     background-color: $t2-color-button-3-0;
-    p {
-      color: $t2-color-text-button-3;
+    color: $t2-color-text-button-3;
+    &:hover {
+      background-color: $t2-color-button-3-2;
     }
   }
 }

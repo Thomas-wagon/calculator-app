@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 // components
 import Button from "./Button";
-const Pad = () => {
+
+const Pad = ({}) => {
   // variables
-  const [buttons, setbuttons] = useState([
+  const buttons = [
     { id: 1, value: "7", type: "number" },
     { id: 2, value: "8", type: "number" },
     { id: 3, value: "9", type: "number" },
@@ -22,7 +23,7 @@ const Pad = () => {
     { id: 16, value: "x", type: "multiply" },
     { id: 17, value: "RESET", type: "reset" },
     { id: 18, value: "=", type: "equal" },
-  ]);
+  ];
 
   return (
     <div className="pad">
