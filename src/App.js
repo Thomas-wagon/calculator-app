@@ -5,20 +5,22 @@ import Pad from "./components/Pad";
 
 const App = () => {
   const [theme, setTheme] = useState(0);
+  const [input, setInput] = useState("");
 
   function changeTheme(value) {
     // console.log(value);
     setTheme(value);
   }
 
-  function displayOnApp(value) {
-    console.log(value);
+  function populateInput(value) {
+    // console.log(value);
+    setInput(value);
   }
   return (
     <div className={`calculator t${theme}`}>
       <Header changeThemeFct={changeTheme} />
-      <Screen />
-      <Pad communicateToApp={displayOnApp} />
+      <Screen input={input} />
+      <Pad communicateToApp={populateInput} />
     </div>
   );
 };
