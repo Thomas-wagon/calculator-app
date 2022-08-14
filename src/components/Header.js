@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = ({ changeThemeFct }) => {
   function changeTheme(event) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     changeThemeFct(event.target.value);
   }
   return (

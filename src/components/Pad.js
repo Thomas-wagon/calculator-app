@@ -2,7 +2,7 @@ import React from "react";
 // components
 import Button from "./Button";
 
-const Pad = ({}) => {
+const Pad = ({ communicateToApp }) => {
   // variables
   const buttons = [
     { id: 1, value: "7", type: "number" },
@@ -25,10 +25,15 @@ const Pad = ({}) => {
     { id: 18, value: "=", type: "equal" },
   ];
 
+  function displayOnPad(value) {
+    // console.log(value);
+    communicateToApp(value);
+  }
+
   return (
     <div className="pad">
       {buttons.map((button) => (
-        <Button button={button} key={button.id} />
+        <Button button={button} key={button.id} giveToPad={displayOnPad} />
       ))}
     </div>
   );
