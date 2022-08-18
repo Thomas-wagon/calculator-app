@@ -1,5 +1,18 @@
+.container {
+  background: $t0-color-main;
+  &.t1 {
+    background: $t1-color-main;
+  }
+  &.t2 {
+    background: $t2-color-main;
+  }
+}
+
 .calculator {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  max-width: 375px;
+  margin: 30px auto;
+  padding: 30px 0;
 }

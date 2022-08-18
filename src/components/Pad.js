@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // components
 import Button from "./Button";
 
@@ -25,6 +25,13 @@ const Pad = ({ communicateToApp }) => {
     { id: 18, value: "=", type: "equal" },
   ];
 
+  const [calc, setCalc] = useState({
+    sign: "",
+    num: 0,
+    result: 0,
+  });
+
+  // function
   function displayOnPad(value) {
     // console.log(value);
     communicateToApp(value);
