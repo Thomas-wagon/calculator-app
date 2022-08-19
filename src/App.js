@@ -4,9 +4,11 @@ import Screen from "./components/Screen";
 import Pad from "./components/Pad";
 
 const App = () => {
+  // variables
   const [theme, setTheme] = useState(0);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("0");
 
+  // functions
   function changeTheme(value) {
     // console.log(value);
     setTheme(value);
@@ -17,10 +19,12 @@ const App = () => {
     setInput(value);
   }
   return (
-    <div className={`calculator t${theme}`}>
-      <Header changeThemeFct={changeTheme} />
-      <Screen input={input} />
-      <Pad communicateToApp={populateInput} />
+    <div className={`container t${theme}`}>
+      <div className="calculator">
+        <Header changeThemeFct={changeTheme} />
+        <Screen input={input} />
+        <Pad communicateToApp={populateInput} />
+      </div>
     </div>
   );
 };
