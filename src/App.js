@@ -6,7 +6,7 @@ import Pad from "./components/Pad";
 const App = () => {
   // variables
   const [theme, setTheme] = useState(0);
-  const [input, setInput] = useState("0");
+  const [input, setInput] = useState({ sign: "", num: 0, res: 0 });
 
   // functions
   function changeTheme(value) {
@@ -14,16 +14,36 @@ const App = () => {
     setTheme(value);
   }
 
-  function populateInput(value) {
+  function handleInput(value) {
+    !isNaN(value)
+      ? handleNumButton(value)
+      : value === "RESET"
+      ? handleResetButton()
+      : value === "+" || "-" || "x" || "/"
+      ? handleOperatorButton(value)
+      : handleResetButton();
     // console.log(value);
-    setInput(value);
   }
+
+  function handleNumButton(value) {
+    setInput({ ...input, res: value });
+    console.log(input);
+  }
+
+  function handleOperatorButton(value) {
+    setInput({ ...input, sign: value });
+  }
+
+  function handleResetButton() {
+    setInput({ ...input, sign: "", num: 0, res: 0 });
+  }
+
   return (
     <div className={`container t${theme}`}>
       <div className="calculator">
         <Header changeThemeFct={changeTheme} />
         <Screen input={input} />
-        <Pad communicateToApp={populateInput} />
+        <Pad communicateToApp={handleInput} />
       </div>
     </div>
   );
