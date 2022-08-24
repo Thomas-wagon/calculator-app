@@ -6,7 +6,7 @@ import Pad from "./components/Pad";
 const App = () => {
   // variables
   const [theme, setTheme] = useState(0);
-  const [input, setInput] = useState({ sign: "", num: 0, res: 0 });
+  const [input, setInput] = useState({ num: 0, sign: "", res: 0 });
 
   // functions
   function changeTheme(value) {
@@ -24,9 +24,9 @@ const App = () => {
       : value === "+" || "-" || "x" || "/"
       ? handleOperatorButton(value)
       : value === "DEL"
-      ? handleDeleteButton(value)
+      ? handleDeleteButton()
       : value === "="
-      ? handleEqualButton(value)
+      ? handleEqualButton()
       : handleResetButton();
     // console.log(value);
   }
@@ -36,9 +36,7 @@ const App = () => {
       ...input,
       num: input.num === 0 || input.num === "0" ? value : input.num + value,
       res:
-        input.num === 0 ||
-        input.num === "0" ||
-        (input.res % 1 === 0 && isNaN(input.res))
+        input.num === 0 || input.num === "0" || isNaN(input.res)
           ? Number(value)
           : input.res + value,
     });
@@ -54,11 +52,34 @@ const App = () => {
   }
 
   function handleOperatorButton(value) {
-    setInput({ ...input, num: input.num + value, sign: value, res: value });
+    setInput({ ...input, sign: value, res: value });
+    console.log(input);
   }
 
   function handleResetButton() {
-    setInput({ ...input, sign: "", num: 0, res: 0 });
+    setInput({ ...input, num: 0, sign: "", res: 0 });
+  }
+
+  function handleEqualButton() {
+    const math = (a, sign, b) =>
+      sign === "+"
+        ? a + b
+        : sign === "-"
+        ? a - b
+        : sign === "/"
+        ? a / b
+        : a * b;
+
+    setInput({
+      ...input,
+      res:
+        input.res === 0 && input.sign === "/"
+          ? "Can't divide with 0"
+          : math(Number(input.num), input.sign, Number(input.res)),
+      num: 0,
+      sign: "",
+    });
+    console.log(input);
   }
 
   return (
