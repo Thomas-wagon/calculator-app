@@ -51,14 +51,23 @@ const App = () => {
     console.log(`comma was trigger : ${button.value}`);
     setInput({
       ...input,
-      num: input.num % 1 === 0 ? input.num : input.num + button.value,
-      res: input.num + button.value,
+      num: !Number.isInteger(input.num) ? input.num : input.num + button.value,
+      res:
+        !Number.isInteger(input.res) && input.sign !== input.res
+          ? input.res
+          : input.sign === input.res
+          ? "0."
+          : input.res + button.value,
     });
   }
 
   function handleOperatorButton(button) {
     console.log(`operator was trigger : ${button.value}`);
     setInput({ ...input, sign: button.value, res: button.value });
+  }
+
+  function handleDeleteButton(button) {
+    console.log(`delete was trigger : ${button.value}`);
   }
 
   function handleResetButton(button) {
