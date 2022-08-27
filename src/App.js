@@ -16,58 +16,58 @@ const App = () => {
     setTheme(value);
   }
 
-  function handleInput(value) {
-    !isNaN(value)
-      ? handleNumButton(value)
-      : value === "."
-      ? handleCommaButton(value)
-      : value === "+" || value === "-" || value === "x" || value === "/"
-      ? handleOperatorButton(value)
-      : value === "="
-      ? handleEqualButton()
-      : handleResetButton();
+  function handleInput(button) {
+    button.className === "number"
+      ? handleNumButton(button)
+      : button.className === "dot"
+      ? handleCommaButton(button)
+      : button.className === "operator"
+      ? handleOperatorButton(button)
+      : button.className === "delete"
+      ? handleDeleteButton(button)
+      : button.className === "equal"
+      ? handleEqualButton(button)
+      : handleResetButton(button);
   }
 
-  function handleNumButton(value) {
-    console.log(`number was trigger : ${value}`);
+  function handleNumButton(button) {
+    console.log(`number was trigger : ${button.value}`);
     setInput({
       ...input,
       num:
         input.num === 0 || input.num === "0"
-          ? value
+          ? Number(button.value)
           : input.sign !== ""
-          ? input.num
-          : input.num + value,
+          ? Number(input.num)
+          : Number(input.num + button.value),
       res:
-        input.res === 0 || input.res === "0"
-          ? value
-          : input.sign !== ""
-          ? value
-          : input.res + value,
+        input.res === 0 || input.res === "0" || isNaN(input.res)
+          ? Number(button.value)
+          : Number(input.res + button.value),
     });
   }
 
-  function handleCommaButton(value) {
-    console.log(`comma was trigger : ${value}`);
+  function handleCommaButton(button) {
+    console.log(`comma was trigger : ${button.value}`);
     setInput({
       ...input,
-      num: input.num % 1 === 0 ? input.num : input.num + ",",
-      res: input.num + ",",
+      num: input.num % 1 === 0 ? input.num : input.num + button.value,
+      res: input.num + button.value,
     });
   }
 
-  function handleOperatorButton(value) {
-    console.log(`operator was trigger : ${value}`);
-    setInput({ ...input, sign: value, res: value });
+  function handleOperatorButton(button) {
+    console.log(`operator was trigger : ${button.value}`);
+    setInput({ ...input, sign: button.value, res: button.value });
   }
 
-  function handleResetButton(value) {
-    console.log(`reset was trigger : ${value}`);
+  function handleResetButton(button) {
+    console.log(`reset was trigger : ${button.value}`);
     setInput({ ...input, num: 0, sign: "", res: 0 });
   }
 
-  function handleEqualButton(value) {
-    console.log(`equal was trigger : ${value}`);
+  function handleEqualButton(button) {
+    console.log(`equal was trigger : ${button.value}`);
     if (input.num && input.sign) {
       const math = (a, sign, b) =>
         sign === "+"
