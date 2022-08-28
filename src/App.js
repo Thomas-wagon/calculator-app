@@ -36,14 +36,14 @@ const App = () => {
       ...input,
       num:
         input.num === 0 || input.num === "0"
-          ? Number(button.value)
+          ? button.value
           : input.sign !== ""
-          ? Number(input.num)
-          : Number(input.num + button.value),
+          ? input.num
+          : input.num + button.value,
       res:
         input.res === 0 || input.res === "0" || isNaN(input.res)
-          ? Number(button.value)
-          : Number(input.res + button.value),
+          ? button.value
+          : input.res + button.value,
     });
   }
 
@@ -51,23 +51,54 @@ const App = () => {
     console.log(`comma was trigger : ${button.value}`);
     setInput({
       ...input,
-      num: !Number.isInteger(input.num) ? input.num : input.num + button.value,
-      res:
-        !Number.isInteger(input.res) && input.sign !== input.res
-          ? input.res
-          : input.sign === input.res
-          ? "0."
-          : input.res + button.value,
+      num: input.num.includes(".") ? input.num : input.num + button.value,
+      res: input.res.includes(".")
+        ? input.res
+        : input.sign === input.res
+        ? "0."
+        : input.res + button.value,
     });
   }
 
   function handleOperatorButton(button) {
     console.log(`operator was trigger : ${button.value}`);
-    setInput({ ...input, sign: button.value, res: button.value });
+    setInput({
+      ...input,
+      sign:
+        input.num === 0 || input.num === "0"
+          ? ""
+          : input.sign === ""
+          ? button.value
+          : input.sign,
+      res:
+        input.num === 0 || input.num === "0"
+          ? 0
+          : input.sign === ""
+          ? button.value
+          : input.sign !== ""
+          ? input.res
+          : input.sign,
+    });
   }
 
   function handleDeleteButton(button) {
     console.log(`delete was trigger : ${button.value}`);
+    setInput({
+      ...input,
+      num:
+        input.num === 0 || input.num === "0" || input.sign !== ""
+          ? input.num
+          : input.num.length < 2
+          ? 0
+          : input.num.slice(0, -1),
+      sign: input.sign !== "" && input.res === input.sign ? "" : input.sign,
+      res:
+        input.res === 0 || input.res === "0"
+          ? input.res
+          : input.res.length < 2
+          ? 0
+          : input.res.slice(0, -1),
+    });
   }
 
   function handleResetButton(button) {
@@ -88,14 +119,16 @@ const App = () => {
           : a * b;
       setInput({
         ...input,
+        num:
+          input.res === 0 && input.sign === "/"
+            ? 0
+            : math(Number(input.num), input.sign, Number(input.res)).toString(),
+        sign: "",
         res:
           input.res === 0 && input.sign === "/"
             ? "Can't divide with 0"
-            : math(Number(input.num), input.sign, Number(input.res)),
-        num: 0,
-        sign: "",
+            : math(Number(input.num), input.sign, Number(input.res)).toString(),
       });
-      console.log(input);
     }
   }
 
