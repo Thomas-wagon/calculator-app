@@ -4,9 +4,10 @@ import Screen from "./components/Screen";
 import Pad from "./components/Pad";
 
 const App = () => {
-  useEffect(() => {
+  /*useEffect(() => {
     console.log(input);
-  });
+  });*/
+
   // variables
   const [theme, setTheme] = useState(0);
   const [input, setInput] = useState({ num: 0, sign: "", res: 0 });
@@ -31,7 +32,7 @@ const App = () => {
   }
 
   function handleNumButton(button) {
-    console.log(`number was trigger : ${button.value}`);
+    // console.log(`number was trigger : ${button.value}`);
     setInput({
       ...input,
       num:
@@ -48,7 +49,7 @@ const App = () => {
   }
 
   function handleCommaButton(button) {
-    console.log(`comma was trigger : ${button.value}`);
+    // console.log(`comma was trigger : ${button.value}`);
     setInput({
       ...input,
       num:
@@ -69,7 +70,7 @@ const App = () => {
   }
 
   function handleOperatorButton(button) {
-    console.log(`operator was trigger : ${button.value}`);
+    // console.log(`operator was trigger : ${button.value}`);
     setInput({
       ...input,
       sign:
@@ -90,7 +91,7 @@ const App = () => {
   }
 
   function handleDeleteButton(button) {
-    console.log(`delete was trigger : ${button.value}`);
+    // console.log(`delete was trigger : ${button.value}`);
     setInput({
       ...input,
       num:
@@ -110,12 +111,12 @@ const App = () => {
   }
 
   function handleResetButton(button) {
-    console.log(`reset was trigger : ${button.value}`);
+    // console.log(`reset was trigger : ${button.value}`);
     setInput({ ...input, num: 0, sign: "", res: 0 });
   }
 
   function handleEqualButton(button) {
-    console.log(`equal was trigger : ${button.value}`);
+    // console.log(`equal was trigger : ${button.value}`);
     if (input.num && input.sign) {
       const math = (a, sign, b) =>
         sign === "+"

@@ -22,6 +22,7 @@ const Header = ({ changeThemeFct }) => {
             type="range"
             min="0"
             max="2"
+            defaultValue="0"
             id="selector"
             onChange={changeTheme}
           />
