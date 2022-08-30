@@ -39,11 +39,11 @@ const App = () => {
           ? button.value
           : input.sign !== ""
           ? input.num
-          : input.num + button.value,
+          : (input.num + button.value).substring(0, 16),
       res:
         input.res === 0 || input.res === "0" || isNaN(input.res)
           ? button.value
-          : input.res + button.value,
+          : (input.res + button.value).substring(0, 16),
     });
   }
 
@@ -51,12 +51,20 @@ const App = () => {
     console.log(`comma was trigger : ${button.value}`);
     setInput({
       ...input,
-      num: input.num.includes(".") ? input.num : input.num + button.value,
-      res: input.res.includes(".")
-        ? input.res
-        : input.sign === input.res
-        ? "0."
-        : input.res + button.value,
+      num:
+        input.num === 0
+          ? "0."
+          : input.num.includes(".")
+          ? input.num
+          : input.num + button.value,
+      res:
+        input.num === 0
+          ? "0."
+          : input.res.includes(".")
+          ? input.res
+          : input.sign === input.res
+          ? "0."
+          : input.res + button.value,
     });
   }
 
@@ -125,9 +133,11 @@ const App = () => {
             : math(Number(input.num), input.sign, Number(input.res)).toString(),
         sign: "",
         res:
-          input.res === 0 && input.sign === "/"
+          input.res === "0" && input.sign === "/"
             ? "Can't divide with 0"
-            : math(Number(input.num), input.sign, Number(input.res)).toString(),
+            : math(Number(input.num), input.sign, Number(input.res))
+                .toString()
+                .substring(0, 16),
       });
     }
   }
