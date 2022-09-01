@@ -1,29 +1,56 @@
-input[type="button"] {
-  background-color: $t0-color-button-1-0;
-  border: none;
-  border-radius: 5px;
-  color: $t0-color-text-button-1;
-  font-weight: bold;
-  font-size: 24px;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    background-color: $t0-color-button-1-2;
-  }
-  &.delete,
-  &.reset {
-    background-color: $t0-color-button-2-0;
-    color: $t0-color-text-button-2;
+.button {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  input[type="button"] {
+    background-color: $t0-color-button-1-0;
+    border: none;
+    border-radius: 5px;
+    color: $t0-color-text-button-1;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
     &:hover {
-      background-color: $t0-color-button-2-2;
+      background-color: $t0-color-button-1-2;
+    }
+    &.delete,
+    &.reset {
+      background-color: $t0-color-button-2-0;
+      color: $t0-color-text-button-2;
+      &:hover {
+        background-color: $t0-color-button-2-2;
+      }
+    }
+    &.equal {
+      background-color: $t0-color-button-3-0;
+      color: $t0-color-text-button-3;
+      &:hover {
+        background-color: $t0-color-button-3-2;
+      }
     }
   }
-  &.equal {
-    background-color: $t0-color-button-3-0;
-    color: $t0-color-text-button-3;
-    &:hover {
-      background-color: $t0-color-button-3-2;
+
+  .backdiv {
+    background-color: $t0-color-button-1-1;
+    border-radius: 5px;
+    height: 100%;
+    position: relative;
+    top: 10%;
+    &.delete,
+    &.reset {
+      background-color: $t0-color-button-2-1;
     }
+    &.equal {
+      background-color: $t0-color-button-3-1;
+    }
+  }
+  &.clicked {
+    top: 10%;
   }
 }
 
@@ -50,6 +77,17 @@ input[type="button"] {
   }
 }
 
+.t1 .backdiv {
+  background-color: $t1-color-button-1-1;
+  &.delete,
+  &.reset {
+    background-color: $t1-color-button-2-1;
+  }
+  &.equal {
+    background-color: $t1-color-button-3-1;
+  }
+}
+
 .t2 input[type="button"] {
   background-color: $t2-color-button-1-0;
   color: $t2-color-text-button-1;
@@ -70,5 +108,16 @@ input[type="button"] {
     &:hover {
       background-color: $t2-color-button-3-2;
     }
+  }
+}
+
+.t2 .backdiv {
+  background-color: $t2-color-button-1-1;
+  &.delete,
+  &.reset {
+    background-color: $t2-color-button-2-1;
+  }
+  &.equal {
+    background-color: $t2-color-button-3-1;
   }
 }
